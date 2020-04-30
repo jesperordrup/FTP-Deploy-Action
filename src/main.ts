@@ -8,7 +8,7 @@ const writeFileAsync = promisify(fs.writeFile);
 
 async function run() {
   const userArguments = getUserArguments();
-  
+   console.log("Args", userArguments);
   try {
     await configureHost(userArguments);
     await syncFiles(userArguments);
