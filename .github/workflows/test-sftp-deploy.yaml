@@ -12,7 +12,9 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action-Typescript@master
       with:
         # deploy to a folder named "sftp-deploy-test.samkirkland.com" on my server
-        ftp-server: sftp://ftp.samkirkland.com:7822/home/samkirkland/sftp-deploy-test.samkirkland.com/
+        # sftp://ftp.samkirkland.com:7822/home/samkirkland/sftp-deploy-test.samkirkland.com/  
+        ftp-server: ${{ secrets.ftp_server }}
         ftp-username: ${{ secrets.sftp_username }}
         ftp-password: ${{ secrets.sftp_password }}
         git-ftp-args: --insecure
+        git-ftp-command: push  
